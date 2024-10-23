@@ -1,26 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ห้องพักทั้งหมด | บุปผาธารา</title>
-</head>
-<body>
-    <header style="background-color: lightgreen;">
-        <a href="#">เกสต์เฮาส์บุปผาธารา</a>
-        <a href="#">ห้องทั้งหมด</a>
-        <a href="#">เกี่ยวกับ</a>
-    </header>
-    <div>
-        <h2>ห้องพักของเรา</h2>
-    </div>
-    <footer style="background-color: lightgreen;">
-        <h5>ช่องทางการติดต่อ</h5>
-        <p>
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
-        </p>
-    </footer>
-</body>
-</html>
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}ห้องพักทั้งหมด | เกสต์เฮาส์บุปผาธารา{% endblock %}
+
+{% block content %}
+<div>
+    <h2>ห้องพักทั้งหมด </h2>
+    {% for room in rooms %}
+        <div style="background-color: lightblue;">
+            <h3><a href="{% url 'room' room.id %}">{{ room.title }}</a></h3>
+            <p>{{ room.price }} บาท</p>
+            {% if room.is_multiple_bed %}
+                <p>ห้องนี้มีเตียงคู่</p>
+            {% else %}
+                <p>ห้องนี้มีเตียงเดี่ยว</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>ยังไม่มีข้อมูล</p>
+    {% endfor %}
+</div>
+{% endblock %}
