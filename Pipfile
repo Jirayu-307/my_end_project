@@ -9,6 +9,7 @@ mysql-connector-python = "*"
 pillow = "*"
 
 [dev-packages]
+bpython = "*"
 
 [requires]
 python_version = "3.12"
