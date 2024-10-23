@@ -1,11 +1,24 @@
+from datetime import datetime
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
 all_rooms = [
-    {'id': 1, 'title': 'ห้องพักหมายเลข 1', 'price': 699, 'is_multiple_bed': True},
-    {'id': 2, 'title': 'ห้องพักหมายเลข 2', 'price': 499, 'is_multiple_bed': False},
-    {'id': 3, 'title': 'ห้องพักหมายเลข 3', 'price': 699, 'is_multiple_bed': True},
-    {'id': 4, 'title': 'ห้องพักหมายเลข 4', 'price': 499, 'is_multiple_bed': False},
+    {
+        'id': 1, 'title': 'ห้องพักหมายเลข 1', 'price': 1699, 'is_multiple_bed': True,
+        'datetest': datetime(2024, 1, 1)
+    },
+    {
+        'id': 2, 'title': 'ห้องพักหมายเลข 2', 'price': 1499, 'is_multiple_bed': False,
+        'datetest': datetime(2024, 1, 2)
+    },
+    {
+        'id': 3, 'title': 'ห้องพักหมายเลข 3', 'price': 1699, 'is_multiple_bed': True,
+        'datetest': datetime(2024, 1, 3)
+    },
+    {
+        'id': 4, 'title': 'ห้องพักหมายเลข 4', 'price': 1499, 'is_multiple_bed': False,
+        'datetest': datetime(2024, 1, 4)
+    },
 ]
 
 # Create your views here.

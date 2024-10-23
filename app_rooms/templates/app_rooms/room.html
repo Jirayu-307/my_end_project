@@ -6,13 +6,15 @@
 {% if room is not None %}
 <div>
     <h3>{{ room.title }}</h3>
-    <p>{{ room.price }} บาท</p>
+    <p>{{ room.price|floatformat:'g' }} บาท</p>
     {% if room.is_multiple_bed %}
         <p>ห้องนี้มีเตียงคู่</p>
     {% else %}
         <p>ห้องนี้มีเตียงเดี่ยว</p>
     {% endif %}
     <p></p>
+    <p>วันที่เข้าพัก {{ room.datetest|date:'j N Y' }}</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
 {% else %}
     <p>ไม่พบห้องพักนี้</p>
