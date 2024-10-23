@@ -15,6 +15,7 @@
                 <p>ห้องนี้มีเตียงเดี่ยว</p>
             {% endif %}
             <p>วันที่เข้าพัก {{ room.datetest|date:'j N Y' }}</p>
+            <p>วันที่ออกจากที่พัก {{ room.check_out_date|date:'j N Y' }}</p>
         </div>
     {% empty %}
         <p>ยังไม่มีข้อมูล</p>
