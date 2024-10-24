@@ -1,8 +1,30 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 
 {% block content %}
 <div>
     <h1>เกสต์เฮาส์บุปผาธารา</h1>
-    <p>ห้องพักของเรา</p>
+    <p>12/1 ซอย 4 ก. หลังตลาดประตูเชียงใหม่ ถนนพระปกเกล้า ตำบลพระสิงห์ อำเภอเมือง, เขตเมืองเก่า, เชียงใหม่, ไทย, 50200</p>
 </div>
+<section>
+    <h4>รูปภาพประกอบ</h4>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about4.jpg' %}">
+        </div>
+        <p>รูปภาพห้องพัก</p>
+    </div>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about2.jpg' %}">
+        </div>
+        <p>รูปภาพสระว่ายน้ำ</p>
+    </div>
+    <div>
+        <div>
+            <img src="{% static 'app_general/home-about3.jpg' %}">
+        </div>
+        <p>รูปภาพห้องนั่งเล่น</p>
+    </div>
+</section>
 {% endblock %}
