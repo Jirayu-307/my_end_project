@@ -4,22 +4,33 @@
 {% block site_title %}ห้องพักทั้งหมด | เกสต์เฮาส์บุปผาธารา{% endblock %}
 
 {% block content %}
-<div>
-    <h2>ห้องพักทั้งหมด </h2>
-    {% for room in rooms %}
-        <div style="background-color: lightblue;">
-            <h3><a href="{% url 'room' room.id %}">{{ room.title }}</a></h3>
-            <p>{{ room.price|floatformat:'g' }} บาท</p>
-            {% if room.is_multiple_bed %}
-                <p>ห้องนี้มีเตียงคู่</p>
-            {% else %}
-                <p>ห้องนี้มีเตียงเดี่ยว</p>
-            {% endif %}
-            <p>วันที่เข้าพัก {{ room.datetest|date:'j N Y' }}</p>
-            <p>วันที่ออกจากที่พัก {{ room.check_out_date|date:'j N Y' }}</p>
-        </div>
-    {% empty %}
-        <p>ยังไม่มีข้อมูล</p>
-    {% endfor %}
-</div>
+<section class="content-section content-section-single">
+    <div class="content-container">
+        <h2 class="content-title">ห้องพักทั้งหมด </h2>
+        {% if rooms.count > 0 %}
+            <div class="grid grid-3">
+                {% for room in rooms %}
+                    <div>
+                        <a href="{% url 'room' room.id %}">
+                            <img class="image-block" src="{{ room.image.url }}" alt="{{ room.title }}">
+                        </a>
+                        <h5 class="room-title">
+                            <a href="{% url 'room' room.id %}">{{ room.title }}</a>
+                        </h5>
+                        <p>{{ room.price|floatformat:'g' }} บาท</p>
+                        {% if room.is_multiple_bed %}
+                            <p>ห้องนี้มีเตียงคู่</p>
+                        {% else %}
+                            <p>ห้องนี้มีเตียงเดี่ยว</p>
+                        {% endif %}
+                        <p>วันที่เข้าพัก {{ room.check_in_date|date:'j N Y' }}</p>
+                        <p>วันที่ออกจากที่พัก {{ room.check_out_date|date:'j N Y' }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>ยังไม่มีข้อมูล</p>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

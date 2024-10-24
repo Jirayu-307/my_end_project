@@ -1,9 +1,9 @@
 {% load static %}
-<header style="background-color: lightgreen;">
-    <a href="{% url 'home' %}">
-        <img src="{% static 'app_general/hotel-logo.png' %}" alt="logo">
+<header class="site-header">
+    <a class="site-header-item site-header-logo" href="{% url 'home' %}">
+        <img src="{% static 'app_general/hotel-logo.png' %}">
         <span>เกสต์เฮาส์บุปผาธารา</span>
     </a>
-    <a href="{% url 'rooms' %}">ห้องพักทั้งหมด</a>
-    <a href="{% url 'about' %}">เกี่ยวกับ</a>
+    <a class="site-header-item" href="{% url 'rooms' %}">ห้องพักทั้งหมด</a>
+    <a class="site-header-item" href="{% url 'about' %}">เกี่ยวกับ</a>
 </header>
